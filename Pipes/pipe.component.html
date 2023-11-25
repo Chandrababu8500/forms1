@@ -1,0 +1,21 @@
+<div class="m-4">
+    <h2>Users Info</h2>
+    <table class="border border-primary w-100">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>UserName</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+           <td>{{user.id}}</td>
+           <td>{{user.name}}</td>
+           <td>{{user.username}}</td>
+           <td>{{user.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+<div>
+  <table class="table table-border text-center">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>Dob</th>
+        <th>Age</th>
+        <th>Place</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userInfo">
+       <td>{{user.id}}</td>
+       <td>{{user.name | gender:user.gender}}</td>
+       <td>{{user.gender}}</td>
+       <td>{{user.salary}}</td>
+       <td>{{user.dob.getFullYear()}}</td>
+       <td>{{user.dob | age}}</td>
+       <td>{{user.place | reverse}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
