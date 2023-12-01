@@ -1,0 +1,34 @@
+<div class="row m-4">
+    <div class="col-md-4">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <h2>User Details</h2>
+        <div class="form-group mt-2">
+            <label for="firstname" class="form-label">firstname</label>
+            <input type="text" name="firstname" id=""formControlName="firstname" class="form-control">
+            <p class="text-danger" *ngIf="userForm.get('firstname').touched && userForm.get('firstname').invalid">enter correct firstname</p>
+        </div>
+        <div class="form-group mt-2">
+            <label for="lastname" class="form-label">lastname</label>
+            <input type="text" name="lastname" id="" formControlName="lastname" class="form-control">
+           <span class="text-danger" *ngIf="userForm.get('lastname').touched && userForm.get('lastname').invalid">enter correct lastname</span>
+        </div>
+        <div class="form-group mt-2">
+            <label for="email" class="form-label">email</label>
+            <input type="text" name="email" id="" formControlName="email" class="form-control">
+            <span class="text-danger" *ngIf="userForm.get('email').touched && userForm.get('email').invalid">enter correct email</span>
+        </div>
+         
+        <div class="mt-2 form-group">
+         <label for="Gender" class="form-label m-2">Gender</label>
+         <input type="radio" name="gender" value="male" id="" formControlName="gender"><span class="m-2">Male</span>
+         <input type="radio" name="gender" value="female" id="" formControlName="gender"><span class="m-2">Female</span>
+         <input type="radio" name="gender" value="other" id="" formControlName="gender"><span class="m-2">Other</span>
+           <span class="text-danger" *ngIf="userForm.get('gender').touched && userForm.get('gender').invalid">please select gender</span>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-info" [disabled]="!userForm.valid">submit</button>
+        </div>
+      </form>
+    </div>
+
+</div>
